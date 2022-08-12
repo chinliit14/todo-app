@@ -5,10 +5,11 @@ function App() {
   //forEach,
 
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [contacts, setContacts] = useState([]);
 
   function handleAddContact() {
-    const newContacts = [...contacts, { id: contacts.length + 1, name: name }];
+    const newContacts = [...contacts, { id: contacts.length + 1, name: name, email: email }];
     setContacts(newContacts);
   }
 
@@ -16,6 +17,10 @@ function App() {
     setName(event.target.value);
   }
 
+  function handleEmail(event) {
+    setEmail(event.target.value);
+  }
+  
   return (
     <div className='App'>
       <h1>Contacts</h1>
@@ -25,13 +30,18 @@ function App() {
           value={name}
           onChange={handleChangeName}
         />
-        <input placeholder='Enter email' />
+        <input 
+        placeholder='Enter email' 
+        value={email}
+        onChange={handleEmail}
+        />
+        
         <button onClick={handleAddContact} className='add-contact-button'>
-          Add contact
+          <font size="3" color="white">Add contact</font>
         </button>
       </div>
       <table>
-        <tr>
+        <tr bgcolor="#ff197d">
           <th>ID</th>
           <th>Name</th>
           <th>Email</th>
@@ -41,6 +51,7 @@ function App() {
           <tr>
             <td>{contact.id}</td>
             <td>{contact.name}</td>
+            <td>{contact.email}</td>
           </tr>
         ))}
       </table>

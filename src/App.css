@@ -19,6 +19,12 @@
   width: 100%;
   margin-bottom: 5px;
   cursor: pointer;
+  border: 4px double #000;
+  background-color: rgb(67, 142, 255);
+}
+
+.add-contact-button:hover {
+  background-color: aqua;
 }
 
 table {
@@ -28,12 +34,20 @@ table {
   margin: auto;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
+th {
+  border: 2px solid #000;
+  text-align: center;
+  padding: 8px;
+}
+
+td {
+  border: 2px double #000;
+  text-align: center;
+  background-color: #b6c3fd;
   padding: 8px;
 }
 
 tr:nth-child(even) {
   background-color: #dddddd;
+  
 }
